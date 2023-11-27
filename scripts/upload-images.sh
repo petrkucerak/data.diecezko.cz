@@ -35,8 +35,8 @@ for file in "$source_folder"/*; do
       echo -e "${GREEN}Copied: $file_name${NC}"
 
       # Generate files
-      # yarn gallery
-      # yarn img2webp
+      yarn gallery
+      yarn img2webp
 
       # Commit changes
       git add ../2023/foto/*
