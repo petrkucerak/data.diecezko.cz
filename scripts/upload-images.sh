@@ -36,6 +36,7 @@ for file in "$source_folder"/*; do
       # Commit changes
       git add *
       git commit -m "Add image $file"
+      git pull
       git push
    fi
 done
