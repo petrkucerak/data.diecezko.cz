@@ -30,8 +30,8 @@ for file in "$source_folder"/*; do
       echo "Copied: $file_name"
 
       # Generate files
-      yarn gallery
-      yarn img2webp
+      # yarn gallery
+      # yarn img2webp
 
       # Commit changes
       git add *
