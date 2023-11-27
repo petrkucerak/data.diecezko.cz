@@ -37,7 +37,7 @@ for file in "$source_folder"/*; do
       # Generate files
       rm ../2023/foto/images.json
       yarn gallery
-      yarn img2webp
+      yarn img2webp $file
 
       # Commit changes
       git add ../2023/foto/*

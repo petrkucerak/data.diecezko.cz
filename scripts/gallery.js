@@ -25,9 +25,10 @@ const processImages = async () => {
           height = info.width > info.height ? 3 : 4;
 
           array.push({
-            src: `https://data.diecezko.cz/2023/foto/${p}`,
+            src: `https://data.diecezko.cz/2023/foto/${p.replace("jpg","webp")}`,
             width: width,
             height: height,
+            alt: "Fotka z podzimního Diecézka 2023"
           });
         } catch (err) {
           console.error(`Error processing image ${p}:`, err);
