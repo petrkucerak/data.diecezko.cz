@@ -4,7 +4,8 @@
   "author": "dev@diecezko.cz",
   "license": "MIT",
   "scripts": {
-    "gallery": "node gallery.js"
+    "gallery": "node gallery.js",
+    "img2webp": "node img2webp.js"
   },
   "dependencies": {}
 }

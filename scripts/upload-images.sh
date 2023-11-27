@@ -1,8 +1,10 @@
 #!/bin/bash
 
+yarn
+
 # Source and destination folders
-source_folder="/../../tmp"
-destination_folder="/../2023/foto"
+source_folder="../../tmp"
+destination_folder="../2023/foto"
 
 # Check if source folder exists
 if [ ! -d "$source_folder" ]; then
@@ -26,6 +28,15 @@ for file in "$source_folder"/*; do
       cp "$file" "$destination_folder/$file_name"
 
       echo "Copied: $file_name"
+
+      # Generate files
+      yarn gallery
+      yarn img2webp
+
+      # Commit changes
+      git add *
+      git commit -m "Add image $file"
+      git push
    fi
 done
 
