@@ -21,7 +21,7 @@ function checkFile(file) {
         })
         .toFile(`${path}/${file}`.replace(/\.(jpg|jpeg|png)$/, ".webp"))
         .then((info) => {
-          console.log(info);
+          // console.log(info);
         })
         .catch((err) => {
           console.error(err);
