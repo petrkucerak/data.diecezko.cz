@@ -2,6 +2,11 @@
 
 yarn
 
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # No Color
+
 # Source and destination folders
 source_folder="../../tmp"
 destination_folder="../2023/foto"
@@ -27,19 +32,20 @@ for file in "$source_folder"/*; do
       # Copy the file to the destination folder
       cp "$file" "$destination_folder/$file_name"
 
-      echo "Copied: $file_name"
+      echo -e "${GREEN}Copied: $file_name${NC}"
 
       # Generate files
       # yarn gallery
       # yarn img2webp
 
       # Commit changes
-      git add *
+      git add ../2023/foto/*
       git commit -m "Add image $file"
       git pull
       git push
 
-      echo "\n\n"
+      echo -e "${YELLOW}Image has been commited${NC}"
+      echo ""
    fi
 done
 
