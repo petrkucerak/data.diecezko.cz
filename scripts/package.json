@@ -7,5 +7,7 @@
     "gallery": "node gallery.js",
     "img2webp": "node img2webp.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "sharp": "^0.32.6"
+  }
 }

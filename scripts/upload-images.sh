@@ -35,6 +35,7 @@ for file in "$source_folder"/*; do
       echo -e "${GREEN}Copied: $file_name${NC}"
 
       # Generate files
+      rm ../2023/foto/images.json
       yarn gallery
       yarn img2webp
 
