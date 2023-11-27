@@ -38,6 +38,8 @@ for file in "$source_folder"/*; do
       git commit -m "Add image $file"
       git pull
       git push
+
+      echo "\n\n"
    fi
 done
 
