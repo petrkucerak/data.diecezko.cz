@@ -1,15 +1,12 @@
 const sharp = require("sharp");
 const fs = require("fs");
+const { argv } = require("node:process");
 
 const path = "../2023/foto";
 
-function checkFile(file) {
-  if (fs.lstatSync(`${path}/${file}`).isDirectory()) {
-    const files = fs.readdirSync(`${path}/${file}`);
-    files.map((f) => checkFile(`${file}/${f}`));
-  } else {
-    if (/.+(jpg|jpeg|png)$/.test(`${file}`.toLowerCase())) {
-      sharp(`${path}/${file}`)
+const filename = argv[2];
+
+sharp(`${path}/${filename}`)
         .resize(1200)
         .webp({ quality: 90, effort: 6 })
         .withMetadata({
@@ -19,16 +16,10 @@ function checkFile(file) {
             },
           },
         })
-        .toFile(`${path}/${file}`.replace(/\.(jpg|jpeg|png)$/, ".webp"))
+        .toFile(`${path}/${filename}`.replace(/\.(jpg|jpeg|png)$/, ".webp"))
         .then((info) => {
           // console.log(info);
         })
         .catch((err) => {
           console.error(err);
         });
-    }
-  }
-}
-
-const files = fs.readdirSync(path);
-files.map((file) => checkFile(file));
