@@ -24,12 +24,13 @@ const processImages = async () => {
           width = info.width > info.height ? 4 : 3;
           height = info.width > info.height ? 3 : 4;
 
-          array.push({
-            src: `https://data.diecezko.cz/2023/foto/${p.replace("jpg","webp")}`,
-            width: width,
-            height: height,
-            alt: "Fotka z podzimního Diecézka 2023"
-          });
+          if(p.includes(".webp"))
+            array.push({
+              src: `https://data.diecezko.cz/2023/foto/${p}`,
+              width: width,
+              height: height,
+              alt: "Fotka z podzimního Diecézka 2023"
+            });
         } catch (err) {
           console.error(`Error processing image ${p}:`, err);
         }
